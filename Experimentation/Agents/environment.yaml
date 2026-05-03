@@ -1,4 +1,4 @@
-name: langchain-ollama-gui
+name: agent-env
 channels:
   - conda-forge
 
