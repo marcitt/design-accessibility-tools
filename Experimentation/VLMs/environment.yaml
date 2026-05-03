@@ -1,0 +1,25 @@
+name: vlm-env
+channels:
+  - conda-forge
+  - pytorch
+
+dependencies:
+  - python=3.10
+  - pip
+  - pytorch
+  - torchvision
+  - pillow
+  - requests
+
+  - pip:
+      - transformers
+      - accelerate
+      - sentencepiece
+      - safetensors
+
+      - ollama
+      - langchain
+      - langchain-core
+      - langchain-ollama
+
+      - pyautogui
