@@ -85,9 +85,8 @@ Free text. Use for anything unusual, multi-step complexity, or reasons for a dif
 - `[zoom] and [pan]` - VERY HARD
 - `[zoom]` - HARD
 - `[zoom] to focus [design object]` - VERY HARD
-- `[zoom] to focus [design object]`
-- `[zoom] to show full context`
-- `[pan] to focus [design object]`
+- `[zoom] to show full context` - VERY HARD
+- `[pan] to focus [design object]` - VERY HARD
 
 ## Selection
 - `[select] [design object] on [canvas] using [cursor]` - HARD
@@ -100,15 +99,14 @@ Free text. Use for anything unusual, multi-step complexity, or reasons for a dif
 - `[create] [text object] at [new position] on [canvas]` - HARD
 - `[create] [design object] at [new position] on [canvas]` - HARD
 - `[drag] to [create] [design object] at [new position] on [canvas] using [cursor]` - VERY HARD
-- `[create] [alignment guide] using [reference object]`
+- `[create] [alignment guide] using [reference object]` - VERY HARD
 
 ## Spatial Positioning
 - `[drag] [design object] to [new position] using [cursor]` - VERY HARD
 - `[drag] [design object] to [new position] using [cursor] and [alignment grids]` - VERY HARD
 - `[move] [selected] to [new position] using [keyboard] and [alignment grids]` - MEDIUM
-- `[drag] [design object] to [new position] using [cursor]`
-- `[drag] [design object] to [new position] using [cursor] and [reference object]`
-- `[drag] [design object] to [resize] using [reference object]`
+- `[drag] [design object] to [new position] using [cursor] and [reference object]` - VERY HARD
+- `[drag] [design object] to [resize] using [reference object]` - VERY HARD
 
 ## Updating Text
 - `[update] [text object content]` - MEDIUM
