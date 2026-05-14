@@ -1,3 +1,4 @@
+The `environment.yaml` file includes all the dependencies for these experiments
 
 The majority of this experimentation is derived from:
 [Speech Recognition in Python: Complete Voice Processing Guide | TechyOwls](https://techyowls.io/blog/speech-recognition-python-guide/)
