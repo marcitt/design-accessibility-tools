@@ -56,6 +56,10 @@ def get_system_prompt():
 
         6. Move object:
         {"type": "move", "query": "Layer Name", "x": number, "y": number}
+        - x and y are absolute canvas coordinates, not offsets
+        - the object will be placed at exactly this position on the canvas
+        - for relative moves like "move it right a bit" use the current position from canvas state and add an offset
+        - canvas origin (0,0) is top-left, x increases rightward, y increases downward
 
         7. Resize object:
         {"type": "resize", "query": "Layer Name", "factor": number}
@@ -73,5 +77,14 @@ def get_system_prompt():
         
         You have access to the conversation history - use it to resolve references like "that", "it", "move it there", 
         or "do that again" by referring to previous commands and their context. If the user wants to undo something try undoing your previous step.
+        
+        Note: speech recognition may mishear layer names. Common substitutions:
+        - "free" → "3"
+        - "to" / "too" → "2"  
+        - "for" → "4"
+        - "won" / "one" → "1"
+        - "ate" → "8"
+
+        If a layer name contains a number word, try the numeric equivalent against the layer list.
         """
     return context + instructions

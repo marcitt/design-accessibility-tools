@@ -20,7 +20,7 @@ client = OpenAI()
 
 from system_prompt import get_system_prompt
 
-system_prompt = get_system_prompt(layer_names)
+system_prompt = get_system_prompt()
 
 r = sr.Recognizer()
 

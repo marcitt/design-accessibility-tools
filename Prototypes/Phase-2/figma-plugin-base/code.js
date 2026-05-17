@@ -1,4 +1,5 @@
-figma.showUI(__html__, { width: 400, height: 200 });
+// figma.showUI(__html__, { width: 400, height: 200 });
+figma.showUI(__html__, { width: 0, height: 0 });
 
 // messages have this structure:
 // {{"type": "select", "query": "Layer Name"}}
@@ -76,8 +77,8 @@ async function handleCommand(msg) {
     if (msg.type === "resize") {
         const node = figma.currentPage.findOne(n => n.name === msg.query);
         if (node) {
-            const newWidth = node.width * (1 + msg.factor);
-            const newHeight = node.height * (1 + msg.factor);
+            const newWidth = node.width * (msg.factor);
+            const newHeight = node.height * (msg.factor);
             node.resize(newWidth, newHeight);
         }
     }
