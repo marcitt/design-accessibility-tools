@@ -60,10 +60,11 @@ def process_command(text, system_prompt):
     #
 
     response = client.chat.completions.create(
-        model="o4-mini",  # low latency model
-        reasoning_effort="low",
+        model="gpt-4o-mini",  # low latency model
+        # reasoning_effort="low",
+        temperature=0,
         messages=[{"role": "system", "content": system_prompt}, *history],
-        response_format={"type": "json_object"},
+        # response_format={"type": "json_object"},
         # * is used for unpacking - it takes a list and spreads outs out individually
     )
 
@@ -158,6 +159,11 @@ def llm_loop(text):
     # handles edge case where LLM accidently wrpas response in dpuble curly braces {{...}}
     if text_out.startswith("{{") and text_out.endswith("}}"):
         text_out = text_out[1:-1]
+
+    if "COMMAND:" in text_out:
+        reasoning, command_part = text_out.split("COMMAND:", 1)
+        print(f"\nreasoning: {reasoning.strip()}\n")  # your diagnostic log
+        text_out = command_part.strip()
 
     try:
         json_data = json.loads(text_out)
