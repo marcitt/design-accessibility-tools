@@ -119,10 +119,15 @@ class GridView(NSView):
 
         for node in nodes:
             try:
-                screen_x = CANVAS_TOP_LEFT_X + (node["x"] - vp_x) * zoom
-                screen_y = (
-                    canvas_cocoa_origin_y + CANVAS_H - ((node["y"] - vp_y) * zoom)
-                )
+                screen_x = (node["x"] - vp_x) * zoom
+                screen_y = CANVAS_H - (
+                    (node["y"] - vp_y) * zoom
+                )  # cocoa Y flip within canvas height
+
+                # screen_x = CANVAS_TOP_LEFT_X + (node["x"] - vp_x) * zoom
+                # screen_y = (
+                #     canvas_cocoa_origin_y + CANVAS_H - ((node["y"] - vp_y) * zoom)
+                # )
 
                 label_text = f"{node['name']}  ({node['id']})"
                 label_w = len(label_text) * 6
@@ -167,7 +172,12 @@ if __name__ == "__main__":
     print(f"screen: {w} x {h}")
 
     window = NSPanel.alloc().initWithContentRect_styleMask_backing_defer_(
-        CGRectMake(0, 0, w, h),
+        CGRectMake(
+            CANVAS_TOP_LEFT_X,
+            h - CANVAS_TOP_LEFT_Y - CANVAS_H,  # cocoa coordiante system adaptation
+            CANVAS_W,
+            CANVAS_H,
+        ),
         NSWindowStyleMaskBorderless,
         NSBackingStoreBuffered,
         False,
