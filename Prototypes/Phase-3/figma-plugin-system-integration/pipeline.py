@@ -29,13 +29,13 @@ pyautogui.FAILSAFE = True
 
 
 # these are added to try to ensure safe termination of any subprocesses once the interpreter exits
-def cleanup_handler(signum, frame):
-    cleanup()
-    sys.exit(0)
+# def cleanup_handler(signum, frame):
+#     cleanup()
+#     sys.exit(0)
 
 
-signal.signal(signal.SIGTERM, cleanup_handler)
-signal.signal(signal.SIGINT, cleanup_handler)
+# signal.signal(signal.SIGTERM, cleanup_handler)
+# signal.signal(signal.SIGINT, cleanup_handler)
 
 
 def cleanup():
@@ -60,8 +60,10 @@ def process_command(text, system_prompt):
     #
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",  # low latency model
+        model="o4-mini",  # low latency model
+        reasoning_effort="low",
         messages=[{"role": "system", "content": system_prompt}, *history],
+        response_format={"type": "json_object"},
         # * is used for unpacking - it takes a list and spreads outs out individually
     )
 
