@@ -1,5 +1,5 @@
 Title,video,sample,start,end,initial_code,action,difficulty_with_existing_speech_tools,tag_primary,tag_secondary,how_primary,how_secondary,location,intent,adjusted_start,adjusted_end,duration,true_duration,true_duration_unlabelled,estimated_duration,insights_and_notes
-"Figma Website Design | Yoga & Meditation Instructor Section [ASMR, No Talking]",https://www.youtube.com/watch?v=ki2cQzL3oZ0,8_1,86.56,86.56,,[deselect],,selection,deselect,cursor,,canvas,,0.0,0.0,0.0,<1 second,1.0,0.5,
+Design UI with me LIVE! UI Design #14,https://www.youtube.com/watch?v=YNxU9YPZRSM&list=PLuCVsS_EScKHdEgqHps_rFxCFX8IpUF8g&index=3,8_1,86.56,86.56,,[deselect],,selection,deselect,cursor,,canvas,,0.0,0.0,0.0,<1 second,1.0,0.5,
 ,,,86.56,86.58,,[hover] over [reference(s)] on [canvas],,wayfinding,wayfinding using canvas,cursor,,canvas,,0.0,2.0,2.0,<3 seconds,3.0,2.5,
 ,,,86.59,86.59,activate pen tool,[gui interaction],,gui interaction,activate tool,cursor,,gui,,3.0,3.0,0.0,<1 second,1.0,0.5,
 ,,,87.01,87.01,place pen point,[click] to [create] [reference] at [new position] on [canvas] using [cursor] and [freehand positioning],,creating spline object,creating design object using freehand,cursor,,canvas,,5.0000000000009095,5.0000000000009095,0.0,<1 second,1.0,0.5,
