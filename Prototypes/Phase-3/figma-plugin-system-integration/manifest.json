@@ -1,8 +1,0 @@
-{
-  "name": "figma-plugin-system-integration",
-  "id": "figma-plugin-system-integration",
-  "api": "1.0.0",
-  "editorType": ["figma"],
-  "main": "code.js",
-  "ui": "ui.html"
-}
