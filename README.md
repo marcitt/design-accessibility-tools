@@ -11,11 +11,16 @@ This is the go to location for everything related to digital prototyping for my 
 
 ## Repo Structure
 
-### Phase 1
+### Prototype
+[Accessibility Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Prototype) 
 
-### Phase 2
+Most up to date prototype ^
 
-### Experimentation (related to phase 1)
+### Research
+Anything related to empirical studies collecting data -> includes analysing existing design workflows and benchmarking different voice tools for specific tasks
+
+
+### Early Experimentation 
 Initial experimentation primarily involved working with local models run via ollama (these are more privacy-preserving in comparison to running through APIs), computer vision methods for reasoning with design software.
 
 1. [Accessibility Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/Accessibility) 
