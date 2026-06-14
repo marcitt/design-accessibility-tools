@@ -1,18 +1,26 @@
-.DS_Store
+# hide environment variables
 .env
 *.env
 
+# hide generated files
 __pycache__/
 *.pyc
 *.pyo
-*ax_tree.txt
 
-*.vscode
+.DS_Store
+
+# hide subfolders
+Archive
+Research/User Evaluation
+Research/Interviews
+
+# dev
+.vscode/
 *package-lock.json
 *node_modules
-*figma_nodes.json
-*grid.json
 
-*mp4_data
-
-Archive
+# ELAN
+*.mp4
+*.mov
+*.eaf
+*.pfsx
