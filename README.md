@@ -1,6 +1,10 @@
 # Creative Visual Design Accessibility Tools
 This is the go to location for everything related to digital prototyping for my master's project.
 
+# Main Prototype:
+https://github.com/marcitt/figma-voice
+Moved to a separate repo to more easily facilitate distribution
+
 ## Project Overview
 
 **Goal:** Improve the accessibility of existing 2D Vector-Based design software (e.g. Figma, Adobe Illustrator, Inkscape) using voice (for users with mobility disabilities).
@@ -9,8 +13,7 @@ This is the go to location for everything related to digital prototyping for my 
 
 ## Repo Structure
 
-### Prototype
-[Main plugin](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Prototype) 
+
 
 Most up to date prototype ^
 
