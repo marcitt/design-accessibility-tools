@@ -5,7 +5,7 @@ This is the go to location for everything related to digital prototyping for my 
 https://github.com/marcitt/figma-voice
 Moved to a separate repo to more easily facilitate distribution
 
-## Project Overview
+# Project Overview
 
 **Goal:** Improve the accessibility of existing 2D Vector-Based design software (e.g. Figma, Adobe Illustrator, Inkscape) using voice (for users with mobility disabilities).
 
@@ -13,44 +13,40 @@ Moved to a separate repo to more easily facilitate distribution
 
 ## Repo Structure
 
+This repo now holds the research/data-collection side of the project. The prototype itself has moved to its own repository: [figma-voice](https://github.com/marcitt/figma-voice).
+
+### 1-Experimentation
+
+Early exploration and dead ends that shaped the pivot toward the Figma Plugin API. See [Prototype README](https://github.com/marcitt/figma-voice) for the tool that resulted from this exploration.
+
+- **Accessibility** — macOS AX API exploration, accessibility overlays, screenshot utility benchmarking
+- **Audio** — audio sampling & transcription methods, polling vs threading vs streaming
+- **Agents** — LLM-based command interpretation experiments (LangChain, tool calling)
+- **VLMs** — multimodal LLM/VLM reasoning over design canvas screenshots
+- **Figma** — Figma API exploration, FigPy wrapper, early plugin experiments
+- **Networking** — boilerplate networking reference materials
+
+### 2-Interviews
+
+Interviews with experts and assistive technology users - primarily hidden for privacy
+
+### 3-Workflow-Analysis
+
+Analysis of existing design workflows 
+
+### 4-Benchmarking
+
+Benchmarking of different voice tools and interaction modalities against specific design tasks
+
+### 5-Evaluation
+
+Usability study data and analysis — task completion time, SUS, and RTLX across the three evaluated conditions (standard Figma, Apple Voice Control, and the custom plugin). Includes quantitative analysis notebooks.
 
 
-Most up to date prototype ^
-
-### Research
-Anything related to empirical studies collecting data -> includes analysing existing design workflows and benchmarking different voice tools for specific tasks
 
 
-### Early Experimentation 
-Initial experimentation primarily involved working with local models run via ollama (these are more privacy-preserving in comparison to running through APIs), computer vision methods for reasoning with design software.
 
-1. [Accessibility Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/Accessibility) 
-    - These experiments focused on understanding how to get access to data crucial for accessibility tools
-    - Exploring MacOS AX API which enables extraction of GUI elements 
-    - Exploration of how to create accessibility overlays 
-    - Evaluating the speed of utility tools important to some of the prototyping process (e.g. screenshots for visual reasoning)
 
-2. [Audio Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/Audio)
-    - Testing different audio sampling & transcription methods 
-    - exploring polling vs threading vs streaming etc.
-    - Looking at how you can integrate commands / tool-calling with transcription
-
-3. [Agent Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/Agents)
-    - Testing LLM methods due to their potential to act a command interpretter for accessibility interactions
-
-4. [VLM Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/VLMs)
-    - Tested multimodal LLMs / VLMs and their reasoning capacity with screenshots of design canvases and the wider ecosystem e.g. GUI screenshots
-
-5. [GUI Analysis / Computer Vision Experiments](https://github.com/marcitt/DVS-Project)
-    - Completed as an external project for my Visual Systems Coursework - thoroughly investigated the potential of cv methods to create generalisable tooling for interacting with design software across any OS/application when accessibility data is not provided via an API or other means. 
-    - It was found these approaches are quite unreliable and difficult to scale - this contributed towards a pivot towards working more with more structured design data through standard APIs in order to improve user interaction and scalability for this project
-
-5. [Figma Experiments](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/Figma)
-    - This experimentation is more linked to phase 2 where the project shifted away from trying to build more generalisable tools to work across different design softwares to focus more specifically on figma as a case study
-    - Looking at Figma API; FigPy Wrapper; Figma Plugins
-
-6. [Networking Reference Materials](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/tree/main/Experimentation/Networking)
-    - Some boilerplate for setting up basic networking 
 
 
 
