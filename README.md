@@ -1,11 +1,11 @@
-# Creative Visual Design Accessibility Tools
-This is the go to location for everything related to digital prototyping for my master's project.
+# Design Accessibility Tools
+This is the go to location for everything related to digital prototyping + research data for my master's project.
 
-# Main Prototype:
+## Main Prototype:
 https://github.com/marcitt/figma-voice
 Moved to a separate repo to more easily facilitate distribution
 
-# Project Overview
+## Project Overview
 
 **Goal:** Improve the accessibility of existing 2D Vector-Based design software (e.g. Figma, Adobe Illustrator, Inkscape) using voice (for users with mobility disabilities).
 
@@ -13,11 +13,11 @@ Moved to a separate repo to more easily facilitate distribution
 
 ## Repo Structure
 
-This repo now holds the research/data-collection side of the project. The prototype itself has moved to its own repository: [figma-voice](https://github.com/marcitt/figma-voice).
+This repo now holds the research/data collection side of the project. The prototype itself has moved to its own repository: [figma-voice](https://github.com/marcitt/figma-voice).
 
 ### 1-Experimentation
 
-Early exploration and dead ends that shaped the pivot toward the Figma Plugin API. See [Prototype README](https://github.com/marcitt/figma-voice) for the tool that resulted from this exploration.
+Early exploration. See [Prototype README](https://github.com/marcitt/figma-voice) for the tool that resulted from this exploration.
 
 - **Accessibility** — macOS AX API exploration, accessibility overlays, screenshot utility benchmarking
 - **Audio** — audio sampling & transcription methods, polling vs threading vs streaming
