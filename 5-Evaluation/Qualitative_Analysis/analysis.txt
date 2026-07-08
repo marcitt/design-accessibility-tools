@@ -1,0 +1,206 @@
+
+
+
+
+Transition from emulating mouse and keyboard was challenging at first. Several participants selected objects before moving them despite interaction 3 allowing moving without selection.
+
+## Predictability 
+
+Some participants preferred the reliability/consistency of Interaction 2 over the higher expressive power of Interaction 3.
+
+V1: "I feel like the second one because it is exact control... I can predict exactly what it will do immediately, whilst for the third one... I'm not very confident in what it will actually do, I have to just wait and hope."
+
+V5: preferred the predictability of the normal grid over the smart grid even though it took more effort — "I'm willing to do a bit more work for the special case to feel more in control."
+
+## Abstraction
+
+V15: "The final voice interaction was a lot better because instead of controlling the mouse with your voice you control the outcome." 
+
+## Latency
+
+LLM reasoning step adds significant latency - recommend mapping frequent command permutations or using fuzzy matching, and avoiding the LLM step as much as possible.
+
+Hard to tell if a system is currently listening/intaking audio - more visual feedback needed.
+
+People got used to Apple Voice Control's wait times, which then made the third system feel comparatively slow and increased repeat-command behaviour.
+
+"It was also nice to see that it was calculating instead of just not doing what I said" (positive feedback note)
+
+V8 (impatient self-description): "the responsiveness could have been faster."
+V7: implies once used to system timing, could use it more efficiently.
+
+V9: regex was fast once speech was processed - main latency drivers are LLM fallback or slow/struggling speech recognition.
+
+V12: "Push to speak for me that would have helped. It is slower because it is using time to think."
+V12: complex utterances get stuck because the system has to reason about them.
+
+## Speech recognition
+
+Commands frequently got broken up/chopped - likely an endpointing issue needing resolution.
+Homophones are still a problem even with keyword biasing.
+
+There were number splitting errors e.g. "one hundred 7" instead of "107". More error handling is required to rectify this.
+
+Deepgram appeared better than Apple Voice Control at recognising non-native English accents.
+
+Recognition issues were sometimes accent-related, but also linked to individual speech patterns (e.g. merged syllables) even in strong British accents.
+
+System worked better for people who spoke more slowly (V8) and more poorly for impatient/fast talkers or people who talked aloud/engaged the researcher more (Interaction 3 specifically).
+
+V4 (strong Portuguese accent): "It even gets my accent. For people who are not native." - worked well.
+
+Apple Voice Control only reliably detects command-style speech (pro: less interference from casual speech; con: less natural); the custom system can pick up whispering/conversational speech but is more vulnerable to interference from off-task talk.
+
+V8: "Does it recognise your voice better than other people's?" - worth investigating whether Apple does per-user adaptation.
+
+"You have to say 'to' eleven.." - language has to be very specific in places.
+
+## Spatial Interactions
+
+V4 Distinguishing left/right and North/South/East/West was harder for participants with dyslexia or non-native English speakers. As the researcher I also experienced this early on as I have dyslexia and I struggle with left vs right and east vs west, but I found after using the system frequently I was able to adapt to this.
+
+V10: "I found the North South East West thing way more confusing than left right up down."
+V7: "It's going to be a problem because I don't know North South East West."
+
+V5: needing to specify NSEW edges one-by-one rather than scaling from an edge directly added friction.
+V4: confused west and east.
+
+V6: raised the case of irregular shapes (e.g. a star) without clear NSEW reference points - how would resizing/moving work there?
+
+V6: proposed being able to resize relative to a specific point/edge rather than only whole-edge NSEW (e.g. for irregular shapes); also suggested resizing by referencing a corner point, not just an edge.
+
+V2: "I'd love to be able to resize things relative to how other things are."
+
+V1: proposed shortform "Resize apple east to east of 19."
+V2: proposed shortform "Resize apple to 48 southeast" as faster than longer phrasing.
+Adding compound directions (southeast, northwest, etc.) could combine multiple resize steps into one command. This is a clear and immediate next step.
+
+Suggestion to shorten commands generally - e.g. dropping "select" before an object name, and dropping "move" where context makes it obvious; resizing may still need to stay explicit.
+
+"Name to whatever" being shorter/faster than starting with "Move" - worth implementing (reflecting interactions in chess)
+
+V10: participants would confuse resize vs. move commands.
+
+Resizing was frequently highlighted as a strength of the smart/integrated system: V9, V7, V13, V8 ("Resizing with the third one was very much easier" / "very much easier").
+
+## Physical Demand
+
+V13: physical demand increased because they kept having to move physically closer
+
+For some participants e.g. V13 physical demand was higher because of feeling like they needed to move physically closer to screen in order to be heard.
+
+V4: mental demand felt lower in Interaction 3 because there's less to remember; also linked physical demand to mental demand (repeating commands taxes both).
+
+## Frustration
+
+V4: typical Figma work without disability accommodation can already carry high frustration depending on task complexity (e.g. scientific papers).
+
+"Small mess ups contribute a lot" to frustration in Interaction 2.
+
+V14: "Ah good enough" - repeated recognition failures led to people giving up on a task.
+
+Most participants didn't want to retry task 2b (high frustration)
+
+## Gamification
+
+V4: described named objects as making the experience feel more like a game, lowering perceived mental demand and increasing enjoyment/satisfaction — contrasted with the plain numbered grid ("show grid grid 19").
+
+## context
+
+Desire for the system to reference a previous command if it got cut/sliced up, rather than losing context entirely.
+
+V3 (extended reflection): wanted more proactive/anticipatory behaviour - e.g. if a value (like "83") is mentioned repeatedly, the system could ask "did you mean this?"; suggested using conversation history to disambiguate or correct repeated misunderstandings (e.g. "13" vs "14").
+
+## Grid System
+
+Renumbering of grid cells on every redraw was confusing to several participants (V14, V15, V10, V7, V2) - recommend minimising this in future iterations. Although most participants found they were able to adapt to this after a few tasks.
+
+V2: "Oh the cell numbers change. Oh I don't like that they keep changing numbers."
+
+Many participants needed to repeat "increase grid density" commands which goes against the intended design goal of minimising repeated commands suggesting this specific interaction needs to be improved upon.
+
+V2: repeated "Increase grid density" four times in frustration: "If it's not perfect I don't want it."
+
+Need a way to set density to a specific number directly, rather than incrementally increasing/decreasing.
+
+V6: "Can I increase the density of cell 58 or something or does it just do it across the board?" - suggests local (not just global) density control. The pushback against this is that increasing local density has the same effect as increasing global density as the updates to that individual cell will not be different in each interaction - this may only be worthwhile if we want the rest of the grid to remain the same. 
+
+V6: proposed "increase local grid density of cell 53."
+
+V7 & V6: proposed combining the alignment grid and the precision/number grid into one system - align grid for snapping, numeric grid for precise resize.
+
+In most real design tasks, users would snap to a line rather than need pixel precision, reducing the necessity of high grid density, perhaps suggesting the results of task 5 are not as significant.
+
+Idea: decreasing grid density further for complex shapes (e.g. showing only major lines).
+
+---
+
+## Navigation
+
+Idea: zooming to specific grid cells directly, rather than needing to manually zoom/pan first.
+
+---
+
+## Mental Models
+
+Reminder/clarification: Interaction 3 allows moving objects without selecting first, which many users didn't initially realise.
+
+V9: "Can I shift click?" - clarified that shift-click equivalents aren't needed; multi-object selection by name works ("Select globe, quartz, plant and flint").
+
+Some participants found the transition from emulating mouse/keyboard to working more directly in the design space to be challenging. 
+
+Explaining Apple Voice Control as "directly emulating mouse and keyboard" made it easier to learn.
+
+Demonstrations beforehand helped; demonstrations after a mistake were even more useful.
+Participants who skipped the demo step often couldn't complete the task end-to-end first time - mouse/keyboard users don't consciously notice micro-interactions (e.g. click vs click-and-hold) that need replicating.
+
+A lot of how the software was experienced was tied to how it was taught - step-by-step walkthroughs in <20 min made it feel far more intuitive than self-directed learning.
+
+V13: second interaction "slightly easier to get my head around"; third was intuitive but only once used to it - "there was a learning curve, which is normal."
+
+V6: "The second one is very logical. It's decomposing the standard clicking method so that's easy to reverse engineer in my head."
+
+V5: with the grid system, understanding the procedure "was very straightforward... in my head it worked exactly the same as how I would use a mouse."
+
+V4: "In the second system you need to get more familiar as there is a specific way of speaking. In the third one you don't need to learn as much."
+
+General: "It gets faster as you get used to it." (V12)
+
+---
+
+V13: "Honestly I would prefer the last one because it was more integrated into Figma."
+V9: clear preference for the smart/integrated system once familiar with it.
+V12: "It's got more potential to be good for a designer because we need more integrated features as designers."
+V8: "System 3 was better designed for Figma individually... the grid helps you align things in a faster manner"
+V7: "I liked the move to the box with the adapted grid. That was really easy."
+V6: smart/named selection ("the naming convention works great") preferred for selection tasks specifically.
+
+## Next Iteration Round
+
+1. Use data to work out a good endpointing value
+2. Feedback on whether the system is currently listening / intaking audio (streaming may work best)
+3. Shorten "move X to Y" style commands (e.g. "moon to 29")
+4. Facilitate more permutations via regex (faster than LLM)
+5. Add fuzzy matching as a fallback before LLM
+6. Minimise LLM interfacing generally
+7. Fix command cut-off / endpointing issue
+8. Improve undo to handle more than just the single latest action (currently can undo the wrong thing, e.g. viewport instead of an action)
+9. Allow zooming directly to a specific grid cell
+10. Keep object/cell name labels visible without requiring the user to zoom out
+11. Add a "middle ground" zoom — zoom toward an object without auto-focusing/snapping to it
+12. Improve numeric/error handling for split numbers in speech (e.g. "one hundred seven" misheard)
+
+## Future work
+1. Address grid renumbering confusion (acknowledged as not easily fixable)
+2. Distinguish thinking-aloud/conversational speech from command speech (closer to Apple VC's behaviour)
+3. Integration with Talon
+4. Support multiple chained commands in one utterance (e.g. "move this to cell 10 then up 10px")
+5. Support more complex compound interactions (e.g. "move quartz to flint")
+6. Reduce density further for complex shapes (e.g. show only major grid lines)
+7. Combine the alignment grid and the precision/number grid into a single hybrid system or define a new grid algorithm that works better for the design context
+Support resizing/moving from a specific point or corner, not just a full edge - needed for irregular shapes (e.g. a star) without clean NSEW references
+8. Support relative resizing ("resize X relative to Y")
+
+potential
+Add a push-to-talk option for users who think aloud or talk to others during tasks (I don't think it makes sense for the system)
+Support local (per-cell) density increases, not just global density changes I don't think it makes sense for the system)
