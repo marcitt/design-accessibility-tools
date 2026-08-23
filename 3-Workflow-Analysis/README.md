@@ -1,4 +1,4 @@
-# Workflow Analysis Details
+# 3-Workflow Analysis Details
 
 ## Introduction
 The aim of this study is to model vector-based design workflows in order to gain an understanding for what would be required for a voice-based control system specifically for design tasks. 
@@ -9,7 +9,7 @@ This study will help with:
 
 It was found that the process of coding itself helped with building an intuition of what kinds of commands may be required in a voice-based command grammar, as notes and encoded actions may reflect potential voice interactions. 
 
-This exercise aims to subtly highlight how quick all of these actions are when its easy to work with the mouse and keyboard but how time consuming they would be if that was not possible
+This exercise aims to subtly highlight how quick all of these actions are when its easy to work with the mouse and keyboard but how time-consuming they would be if that was not possible
 
 
 ## Methodology 
