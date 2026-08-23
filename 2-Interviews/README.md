@@ -1,1 +1,3 @@
-/2-Interviews data is hidden for confidentiality.
+# 2-Interviews
+
+All interview data in `/2-Interviews` is hidden for confidentiality.
