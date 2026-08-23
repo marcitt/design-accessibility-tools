@@ -1,4 +1,4 @@
-### Early Experimentation 
+# 1-Experimentation 
 Initial experimentation primarily involved working with local models run via ollama (these are more privacy-preserving in comparison to running through APIs), computer vision methods for reasoning with design software.
 
 1. Accessibility Experiments
@@ -21,6 +21,8 @@ Initial experimentation primarily involved working with local models run via oll
 5. GUI Analysis / Computer Vision Experiments
     - Completed as an external project for my Visual Systems Coursework - thoroughly investigated the potential of cv methods to create generalisable tooling for interacting with design software across any OS/application when accessibility data is not provided via an API or other means. 
     - It was found these approaches are quite unreliable and difficult to scale - this contributed towards a pivot towards working more with more structured design data through standard APIs in order to improve user interaction and scalability for this project
+
+Project Link: https://github.com/marcitt/eye-snapping
 
 5. Figma Experiments
     - This experimentation is more linked to phase 2 where the project shifted away from trying to build more generalisable tools to work across different design softwares to focus more specifically on figma as a case study
