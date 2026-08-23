@@ -325,12 +325,12 @@ TRY THIS START TIME: 55.53 - yep that works fine
 - The pace of this design workflow is quite a bit slower than previous ones with less action density. 
 
 
-## Sample Workflow 10 - incomplete
+## Sample Workflow 10
 https://www.youtube.com/watch?v=uz9tPsak9pM&list=PLrJQSKQvgHS73G9sOhMhmWk-JoJZsyPiX
 
 
-Around 25 mins in starts getting into design properly 
-Begins to slow down around 62 mins
+Around 25 mins in starts getting into design properly.
+Begins to slow down around 62 mins.
 
 ```run-python
 import random
@@ -346,4 +346,4 @@ def random_timestamp(end="62.00", start="25.00"):
 print(random_timestamp())
 ```
 
-START SAMPLE TIME = 56.32 - started a bit later 57.00 when there is less talking interupting the workflow
+START SAMPLE TIME = 56.32 - started a bit later 57.00 when there is less talking interupting the workflow.
