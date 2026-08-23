@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 """
-process_best_attempts.py
-
 Reference: Claude Sonnet 4.6
 
 Reads raw ELAN tab-delimited .txt exports (one per participant, e.g. V5.txt,
@@ -35,12 +33,12 @@ import csv
 import os
 import re
 
-TASK_RE = re.compile(r'^task_(\d+)([abc])(?:_(\d+))?(?:_(failed|void|prompted))?$')
+TASK_RE = re.compile(r"^task_(\d+)([abc])(?:_(\d+))?(?:_(failed|void|prompted))?$")
 
 INPUT_MODE_MAP = {
-    'a': 'standard_input',
-    'b': 'voice_control',
-    'c': 'plugin',
+    "a": "standard_input",
+    "b": "voice_control",
+    "c": "plugin",
 }
 
 
@@ -65,9 +63,9 @@ def parse_label(label):
 
 def task_sort_key(base_task_id):
     """Sorts task_1a, task_2a, task_3a, task_4a, task_5a, task_1b... in natural order."""
-    m = re.match(r'^task_(\d+)([abc])$', base_task_id)
+    m = re.match(r"^task_(\d+)([abc])$", base_task_id)
     if not m:
-        return (999, 'z')
+        return (999, "z")
     num, letter = m.groups()
     return (int(num), letter)
 
@@ -94,7 +92,9 @@ def parse_txt(path):
                 unparsed_labels.append(label)
                 continue
             base, letter, status = parsed
-            rows.append({"base": base, "letter": letter, "status": status, "duration": duration})
+            rows.append(
+                {"base": base, "letter": letter, "status": status, "duration": duration}
+            )
     return rows, unparsed_labels
 
 
@@ -119,15 +119,17 @@ def process_file(path):
     for base in sorted(groups, key=task_sort_key):
         best = pick_best(groups[base])
         if best:
-            task_num_match = re.match(r'^task_(\d+)[abc]$', base)
+            task_num_match = re.match(r"^task_(\d+)[abc]$", base)
             task_num = task_num_match.group(1) if task_num_match else base
-            results.append({
-                "task": task_num,
-                "input_mode": INPUT_MODE_MAP[best["letter"]],
-                "label": base,
-                "duration": best["duration"],
-                "modifier": best["status"] or "",
-            })
+            results.append(
+                {
+                    "task": task_num,
+                    "input_mode": INPUT_MODE_MAP[best["letter"]],
+                    "label": base,
+                    "duration": best["duration"],
+                    "modifier": best["status"] or "",
+                }
+            )
         else:
             missing.append(base)
     return results, missing, unparsed_labels
@@ -138,15 +140,25 @@ def find_raw_txt_files(raw_folder):
     found = []
     for root, _, files in os.walk(raw_folder):
         for fname in files:
-            if re.match(r'^[Vv]\d+\.txt$', fname):
+            if re.match(r"^[Vv]\d+\.txt$", fname):
                 found.append(os.path.join(root, fname))
     return sorted(found)
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Summarize best-attempt durations per task per participant.")
-    parser.add_argument("--raw-folder", default="./raw-data", help="Folder containing participant .txt files (searched recursively)")
-    parser.add_argument("--out-folder", default="./processed-data", help="Folder to write per-participant summary CSVs into")
+    parser = argparse.ArgumentParser(
+        description="Summarize best-attempt durations per task per participant."
+    )
+    parser.add_argument(
+        "--raw-folder",
+        default="./raw-data",
+        help="Folder containing participant .txt files (searched recursively)",
+    )
+    parser.add_argument(
+        "--out-folder",
+        default="./processed-data",
+        help="Folder to write per-participant summary CSVs into",
+    )
     args = parser.parse_args()
 
     raw_folder = os.path.abspath(args.raw_folder)
@@ -171,22 +183,45 @@ def main():
             writer = csv.writer(f)
             writer.writerow(["task", "input_mode", "label", "duration", "modifier"])
             for r in results:
-                writer.writerow([r["task"], r["input_mode"], r["label"], r["duration"], r["modifier"]])
+                writer.writerow(
+                    [
+                        r["task"],
+                        r["input_mode"],
+                        r["label"],
+                        r["duration"],
+                        r["modifier"],
+                    ]
+                )
                 combined_rows.append({"participant": participant, **r})
 
         print(f"{participant}: {len(results)} task(s) written -> {out_path}")
         if missing:
-            print(f"    MISSING (no valid attempt, all failed/void): {', '.join(missing)}")
+            print(
+                f"    MISSING (no valid attempt, all failed/void): {', '.join(missing)}"
+            )
         if unparsed_labels:
-            print(f"    Unrecognized labels skipped: {', '.join(sorted(set(unparsed_labels)))}")
+            print(
+                f"    Unrecognized labels skipped: {', '.join(sorted(set(unparsed_labels)))}"
+            )
 
     # Master combined sheet across all participants
     master_path = os.path.join(out_folder, "all_participants_summary.csv")
     with open(master_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
-        writer.writerow(["participant", "task", "input_mode", "label", "duration", "modifier"])
+        writer.writerow(
+            ["participant", "task", "input_mode", "label", "duration", "modifier"]
+        )
         for r in combined_rows:
-            writer.writerow([r["participant"], r["task"], r["input_mode"], r["label"], r["duration"], r["modifier"]])
+            writer.writerow(
+                [
+                    r["participant"],
+                    r["task"],
+                    r["input_mode"],
+                    r["label"],
+                    r["duration"],
+                    r["modifier"],
+                ]
+            )
 
     print(f"\nMaster sheet written -> {master_path}")
 
