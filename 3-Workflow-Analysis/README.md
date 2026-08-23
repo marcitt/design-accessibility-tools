@@ -9,24 +9,20 @@ This study will help with:
 
 It was found that the process of coding itself helped with building an intuition of what kinds of commands may be required in a voice-based command grammar, as notes and encoded actions may reflect potential voice interactions. 
 
-This exercise aims to subtly highlight how quick all of these actions are when its easy to work with the mouse and keyboard but how time-consuming they would be if that was not possible
+This exercise aims to subtly highlight how quick all of these actions are when its easy to work with the mouse and keyboard but how time-consuming they would be if that was not possible.
 
 
 ## Methodology 
 
 The selected methodology involves collecting publicly available YouTube videos which capture live digital desk tasks, using these videos to create a timestamped codebook of actions taken by the designer and then applying this data to derive key statistics.
 
-[Coding Scheme Link](https://github.com/marcitt/Creative-Visual-Design-Accessibility-Tools/blob/main/Research/Workflow%20Analysis/Workflow%20Analysis%20Coding%20Scheme.md)
+[Coding Scheme Link](https://github.com/marcitt/design-accessibility-tools/blob/6987de78b96e2f6ddb480d9b3a1391f536ce9cd5/3-Workflow-Analysis/Workflow%20Analysis%20Coding%20Scheme.md)
 
 
- For videos
+For videos
 with commentary a purposive sampling approach was used to select video segments
 with significantly reduced commentary, but for videos without commentary a random
-sampling approach was applied. A thorough explanation of the sampling procedure and
-coding process is available through the See the project’s central GitHub Repository.
-
-
-
+sampling approach was applied.
 
 ## Data Collection: Video Sampling Approach
 
@@ -103,7 +99,7 @@ Findings are mostly included in the notes below:
 ---
 ## Notes on Specific Video Samples
 
-This section includes some notes on specific samples including how timeframes/videos were selected but also ==qualitative findings / thoughts that inform design implications and objectives.==
+This section includes some notes on specific samples including how timeframes/videos were selected but also *qualitative findings / thoughts that inform design implications and objectives.*
 
 For the first two video samples I began collecting data from the start of the videos - whereas in the other videos data is collected from random positions in the timeline. I thought it was important to have some data on the start of the design process as this can often be a little different from mid sections, which is why I actively included some starting segments in my analysis. For the rest of the data random timeframes were selected as this was important to ensure diverse workflows were sampled.
 
@@ -121,8 +117,8 @@ Selected video 6: https://www.youtube.com/watch?v=JkC4o1U5zgM&list=PLfrBp-7QhDqt
 Skipped to 0:21 for the start of the design interaction. 
 
 **Findings:**
-- ==Making mistakes is cheap with mouse and keyboard (often < 1 second for clicking the wrong object).==
-- ==In comparision making mistakes with voice is frustrating and significantly slows down the design process and interrupts the design flow (known from prior experience).==
+- **Making mistakes is cheap with mouse and keyboard (often < 1 second for clicking the wrong object).**
+- **In comparision making mistakes with voice is frustrating and significantly slows down the design process and interrupts the design flow (known from prior experience).**
 - The longest tasks with mouse and keyboard are often associated with typing text - selecting, dragging and clicking things is usually super quick
 - Simultaneous clicking + keyboard shortcut is probably hard with voice - need to check 
 
@@ -167,15 +163,15 @@ print(random_timestamp(start="0.54", end="40.00"))
 Start time = 10.38 - sample from here - moved to 10.36 for first clear action
 
 **Findings:**
-- ==Being able to maintain an internal state history may be relevant e.g. if the user wants to say something like "zoom back to the original position" -> this later directly informed design objectives==
-- Desired positions will be hard to verbally dictate without some kind of visual support e.g. a grid interface or similar ==-> also informed design objectives==
+- **Being able to maintain an internal state history may be relevant e.g. if the user wants to say something like "zoom back to the original position" -> this later directly informed design objectives**
+- Desired positions will be hard to verbally dictate without some kind of visual support e.g. a grid interface or similar **-> also informed design objectives**
 - Repeated sequences are common which would be time-consuming to replicate with voice - but these can potentially be encoded as a 'macro' or 'function' defined by the user e.g. repeat sequence on object x; or if the software can identify repeated sequences and map them to new objects - e.g. you've already performed this sequence would you like to repeat it?
 - hovering is difficult to achieve via voice but is required for some information revealing/wayfinding purposes e.g. finding where a layer is; revealing tooltips etc. 
 - clicking on GUI values / updating these values is important - in theory all of these values could be rewritten as voice inputs but that could potentially be quite time consuming -> a more intuitive method would try to take what already exists and make it easier to navigate -> rewriting everything as plaintext.
 - lots of actions may not actually be required for a voice tool as they are mistakes/misclicks.
-- ==deep select is probably **HARD** for voice since it requires explicit hierarchy knowledge that a mouse user gets visually for free.==
+- **deep select is probably _HARD_ for voice since it requires explicit hierarchy knowledge that a mouse user gets visually for free.**
 
-==For users without disabilities many actions can be 'comfort' actions e.g. zooming in and out briefly or deselecting an object and reselecting an object when necessary. These actions are redundancies and not crucial to actual tangible design updates but can help the user with wayfinding. In comparison these actions are extremely costly for users with disabilities - although that does not eliminate the fact that they might actually be desirable - it is hard to know== 
+**For users without disabilities many actions can be 'comfort' actions e.g. zooming in and out briefly or deselecting an object and reselecting an object when necessary. These actions are redundancies and not crucial to actual tangible design updates but can help the user with wayfinding. In comparison these actions are extremely costly for users with disabilities - although that does not eliminate the fact that they might actually be desirable - it is hard to know**
 
 ---
 ### Sample Workflow 4
@@ -202,7 +198,7 @@ print(random_timestamp())
 Start time = 61.28- sample from here
 
 **Findings:**
-- ==Need a way to delete objects using voice==
+- **Need a way to delete objects using voice**
 
 ---
 
@@ -221,9 +217,9 @@ Started from 24:30
 Has an interesting segment different to the previous samples
 
 **Findings:**
--	==Moving something to an open space or just kind of relative to a cluster of objects doesn’t require a lot of precision - it's a different kind of action==
--	==Some actions require a lot of alignment grid things==
--	==Some actions would require pixel level precision - but most fit the above==
+-	**Moving something to an open space or just kind of relative to a cluster of objects doesn’t require a lot of precision - it's a different kind of action**
+-	**Some actions require a lot of alignment grid things**
+-	**Some actions would require pixel level precision - but most fit the above**
 
 ---
 
